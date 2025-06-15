@@ -49,8 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
 
         // Display the result
-        // print(f"
-La distancia a es: {a:.2f}")
         calculationResult.textContent = 'La distancia a es: ' + a.toFixed(2);
         calculationResult.style.color = 'green'; // Or your preferred color for success
     }
