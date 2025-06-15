@@ -106,7 +106,7 @@ body {
 
 #calculation-image {
     display: block;
-    max-width: 800px; /* Changed from 400px */
+    max-width: 100%; /* Changed from 800px */
     width: 100%;
     height: auto;
     border: 1px solid #ddd;

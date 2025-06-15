@@ -12,7 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for the calculate button
     if (calculateButton) {
         calculateButton.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); // DEBUGGING LINE
+            calculateButton.textContent = 'Procesando...'; // DEBUGGING LINE - Visual feedback
+
             performCalculation();
+
+            // Optional: Revert button text after a short delay if performCalculation is quick
+            // setTimeout(function() {
+            //     calculateButton.textContent = 'Calcular';
+            // }, 1000); // Reverts after 1 second
         });
     }
 
