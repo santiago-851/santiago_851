@@ -5,55 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz 27. Matemáticas Básicas</title>
     <link rel="stylesheet" href="style.css">
+    <!-- We might need to add some specific styles for our content within the new structure later -->
 </head>
 <body>
-    <header>
+
+    <div class="header">
+        <!-- Content from old <header> goes here -->
         <h1>Quiz 27. Matemáticas Básicas</h1>
         <h2>Elaborado por Santiago Roberto Saiz</h2>
-    <div class="youtube-channel-link">
-        <a href="https://www.youtube.com/channel/UCcs3RmowmkizCNbL_tptKhw" target="_blank" rel="noopener noreferrer">
-            Mi Canal de Youtube
-        </a>
+        <div class="youtube-channel-link">
+            <a href="https://www.youtube.com/channel/UCcs3RmowmkizCNbL_tptKhw" target="_blank" rel="noopener noreferrer">
+                Mi Canal de Youtube
+            </a>
+        </div>
     </div>
-    </header>
 
-    <main>
-        <section id="video-section">
-            <!-- YouTube video will be embedded here -->
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                        src="https://www.youtube.com/embed/lnPylS6z-vU"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+    <div class="row">
+        <div class="column side" style="background-color:#f1f1f1;">
+            <!-- Left side column - empty for now -->
+            <p>&nbsp;</p> <!-- Adding non-breaking space to give it some content for display -->
+        </div>
 
-        <section id="image-calculation-section">
-            <h3>Cálculos con Imagen</h3>
-            <img src="https://via.placeholder.com/400x200.png?text=Imagen+de+Ejemplo" alt="Imagen para cálculos" id="calculation-image">
-            <div id="input-controls">
-                <!-- Input fields will go here -->
-                <label for="inputValue1">Valor 1:</label>
-                <input type="number" id="inputValue1" name="inputValue1" placeholder="Ingrese el primer valor">
+        <div class="column middle">
+            <!-- Main content sections go here -->
+            <section id="video-section">
+                <!-- Original video embed code -->
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 20px;"> <!-- Added margin-bottom for spacing -->
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/lnPylS6z-vU"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
 
-                <label for="inputValue2">Valor 2:</label>
-                <input type="number" id="inputValue2" name="inputValue2" placeholder="Ingrese el segundo valor">
+            <section id="image-calculation-section">
+                <h3>Cálculos con Imagen</h3>
+                <img src="https://via.placeholder.com/400x200.png?text=Imagen+de+Ejemplo" alt="Imagen para cálculos" id="calculation-image">
+                <div id="input-controls">
+                    <label for="inputValue1">Valor 1:</label>
+                    <input type="number" id="inputValue1" name="inputValue1" placeholder="Ingrese el primer valor">
+                    <label for="inputValue2">Valor 2:</label>
+                    <input type="number" id="inputValue2" name="inputValue2" placeholder="Ingrese el segundo valor">
+                    <button id="calculateButton">Calcular</button>
+                </div>
+                <div id="results">
+                    <p id="calculationResult">El resultado aparecerá aquí.</p>
+                </div>
+            </section>
+        </div>
 
-                <button id="calculateButton">Calcular</button>
-            </div>
-            <div id="results">
-                <!-- Calculation results will be displayed here -->
-                <p id="calculationResult">El resultado aparecerá aquí.</p>
-            </div>
-        </section>
-    </main>
+        <div class="column side" style="background-color:#f1f1f1;">
+            <!-- Right side column - empty for now -->
+            <p>&nbsp;</p> <!-- Adding non-breaking space for display -->
+        </div>
+    </div>
 
-    <footer>
-        <!-- Optional footer content -->
-    </footer>
+    <div class="footer">
+        <p>Pie de página - Contenido de ejemplo.</p>
+    </div>
 
     <script src="script.js"></script>
 </body>

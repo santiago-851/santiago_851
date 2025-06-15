@@ -1,93 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0; /* Ensure no default browser margin */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative; /* Added for positioning context */
-    padding: 10px; /* General padding, can be adjusted */
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  /* font-size: 35px; /* Base size from template, h1/h2 will specify their own */
+  position: relative;
 }
 
-header h1 {
-    font-size: 2.5em; /* Large font size */
-    color: #007bff; /* Blue color */
+.header h1 {
+    font-size: 35px;
+    color: #007bff;
     margin-bottom: 0.2em;
+    margin-top: 0; /* Reset top margin */
 }
 
-header h2 {
+.header h2 {
     font-size: 1.2em;
     color: #555;
     font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px; /* Space before content or if YT link was below */
 }
 
-main {
+/* YouTube Channel Link */
+.youtube-channel-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.9em;
+}
+
+.youtube-channel-link a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-section {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+.youtube-channel-link a:hover,
+.youtube-channel-link a:focus {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
 }
 
-section:last-child {
-    border-bottom: none;
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: -10px; /* Counteract column padding for full-width feel */
+  margin-right: -10px; /* Counteract column padding for full-width feel */
 }
 
-h3 {
-    color: #333;
-    margin-bottom: 15px;
+/* Columns */
+.column {
+  padding: 10px; /* Original template padding */
 }
 
+.column.side {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+   /* background-color: #f1f1f1; /* Match header/footer - user can remove if they want body bg */
+}
+
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px; /* Space before footer */
+}
+
+/* Sections within Middle Column */
 #video-section, #image-calculation-section {
-    text-align: center; /* Center content within these sections */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 0; /* Reset as column.middle has margin-bottom */
+}
+
+/* General Content Element Styling */
+.column.middle h3 {
+    color: #333;
+    margin-top: 0; /* First element in section */
+    margin-bottom: 20px; /* Increased */
+    font-size: 1.6em; /* Increased */
 }
 
 #calculation-image {
-    display: block; /* Make it a block element for centering and margin auto */
-    max-width: 400px; /* Set a max-width as originally in inline style, but can be overridden if needed by user */
-    width: 100%; /* More responsive within the max-width constraint */
-    height: auto;   /* Maintain aspect ratio */
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-left: auto; /* For centering if parent is text-align: center */
-    margin-right: auto; /* For centering */
-    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px; /* Increased */
+}
+
+#input-controls {
+    max-width: 450px; /* Constrain width of form elements */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #input-controls label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    text-align: left;
 }
 
 #input-controls input[type="number"],
 #input-controls input[type="text"] {
-    width: calc(100% - 22px); /* Adjust width to account for padding and border */
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
 }
 
 #input-controls button {
-    display: inline-block;
+    display: block; /* Make button take full width of its container */
+    width: 100%;
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em; /* Slightly larger */
+    margin-top: 10px;
 }
 
 #input-controls button:hover {
@@ -95,43 +157,63 @@ h3 {
 }
 
 #results {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 25px; /* Increased */
+    padding: 15px;
     background-color: #e9ecef;
     border: 1px solid #ced4da;
     border-radius: 4px;
-    min-height: 30px;
-    text-align: left; /* Align text to the left within the results box */
+    min-height: 40px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.4; /* Adjust line height for results */
 }
 
-footer {
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  /* margin-top: 30px; /* .column.middle now has margin-bottom */
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 28px;
+  }
+  .header h2 {
+    font-size: 1em;
+  }
+  .youtube-channel-link {
+    position: static;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px; /* Space after link */
     text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    font-size: 0.9em;
-    color: #777;
-}
+  }
 
-.youtube-channel-link {
-    position: absolute;
-    top: 10px; /* Adjust for desired distance from top */
-    right: 10px; /* Adjust for desired distance from right */
-    font-size: 0.9em; /* Slightly smaller to fit better as a corner utility link */
-}
-
-.youtube-channel-link a {
-    color: #007bff; /* Use the same blue as h1 for consistency */
-    text-decoration: none; /* Remove underline by default */
-    padding: 5px 10px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.youtube-channel-link a:hover,
-.youtube-channel-link a:focus {
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none; /* Ensure underline doesn't appear on hover */
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin-left: 0; /* Reset negative margins */
+    margin-right: 0; /* Reset negative margins */
+  }
+  .column.middle {
+    border-radius: 0;
+    margin-bottom: 0; /* Footer will provide space */
+  }
+  .column.side {
+      display: none; /* Hide side columns on small screens */
+  }
+  #input-controls input[type="number"],
+  #input-controls input[type="text"],
+  #input-controls button {
+    font-size: 16px; /* Ensure readability on mobile */
+  }
+   #video-section div[style*="padding-bottom"] { /* Target the iframe wrapper */
+    padding-bottom: 75% !important; /* Adjust aspect ratio for smaller screens if needed, e.g., more squareish */
+  }
 }
