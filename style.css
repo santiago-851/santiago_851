@@ -9,6 +9,8 @@ body {
 header {
     text-align: center;
     margin-bottom: 30px;
+    position: relative; /* Added for positioning context */
+    padding: 10px; /* General padding, can be adjusted */
 }
 
 header h1 {
@@ -109,4 +111,27 @@ footer {
     border-top: 1px solid #ccc;
     font-size: 0.9em;
     color: #777;
+}
+
+.youtube-channel-link {
+    position: absolute;
+    top: 10px; /* Adjust for desired distance from top */
+    right: 10px; /* Adjust for desired distance from right */
+    font-size: 0.9em; /* Slightly smaller to fit better as a corner utility link */
+}
+
+.youtube-channel-link a {
+    color: #007bff; /* Use the same blue as h1 for consistency */
+    text-decoration: none; /* Remove underline by default */
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.youtube-channel-link a:hover,
+.youtube-channel-link a:focus {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none; /* Ensure underline doesn't appear on hover */
 }
