@@ -1,37 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get references to the DOM elements
     const calculateButton = document.getElementById('calculateButton');
-    const inputValue1 = document.getElementById('inputValue1');
-    const inputValue2 = document.getElementById('inputValue2');
+    // const inputValue1 = document.getElementById('inputValue1'); // Old input
+    // const inputValue2 = document.getElementById('inputValue2'); // Old input
+    const inputH = document.getElementById('inputH');
+    const inputBeta = document.getElementById('inputBeta');
+    const inputX = document.getElementById('inputX');
     const calculationResult = document.getElementById('calculationResult');
     const calculationImage = document.getElementById('calculation-image');
 
     // Event listener for the calculate button
     if (calculateButton) {
         calculateButton.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); // DEBUGGING LINE
+            calculateButton.textContent = 'Procesando...'; // DEBUGGING LINE - Visual feedback
+
             performCalculation();
+
+            // Optional: Revert button text after a short delay if performCalculation is quick
+            // setTimeout(function() {
+            //     calculateButton.textContent = 'Calcular';
+            // }, 1000); // Reverts after 1 second
         });
     }
 
     // Function to get input values, perform calculation, and display result
     function performCalculation() {
         // Get values from input fields
-        const val1 = parseFloat(inputValue1.value);
-        const val2 = parseFloat(inputValue2.value);
+        const h = parseFloat(inputH.value);
+        const beta = parseFloat(inputBeta.value);
+        const x = parseFloat(inputX.value);
 
         // Validate inputs
-        if (isNaN(val1) || isNaN(val2)) {
-            calculationResult.textContent = 'Por favor, ingrese números válidos en ambos campos.';
+        if (isNaN(h) || isNaN(beta) || isNaN(x)) {
+            calculationResult.textContent = 'Por favor, ingrese números válidos en todos los campos.';
             calculationResult.style.color = 'red';
             return;
         }
 
-        // Placeholder calculation: Sum of two numbers
-        // This will be replaced with specific logic provided by the user for each image.
-        const result = val1 + val2;
+        // Implement the calculation logic from the Python code
+        // angulo = radians(B+90)  => (beta + 90) * PI / 180
+        const angleRad = (beta + 90) * Math.PI / 180;
+
+        // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
+        let a = Math.sqrt(Math.pow(x, 2) + Math.pow(h, 2) - (2 * x * h * Math.cos(angleRad)));
+
+        // a = round(a,2)
+        a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
 
         // Display the result
-        calculationResult.textContent = 'Resultado del cálculo: ' + result;
+        calculationResult.textContent = 'La distancia a es: ' + a.toFixed(2);
         calculationResult.style.color = 'green'; // Or your preferred color for success
     }
 
