@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult.style.color = 'green'; // Or your preferred color for success
     }
 
+    
+
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
     // function loadImageAndCalculation(imageSrc, calculationFunction) {
