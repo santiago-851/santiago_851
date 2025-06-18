@@ -28,8 +28,8 @@
 
         <div class="column middle">
             <!-- Main content sections go here -->
-            <img src="canal.png" alt="Channel Image" class="full-width-image">
-            <img src="portada1.png" alt="Cover Image 1" class="full-width-image">
+            <img src="canal.png" alt="Channel Image" class="full-width-image" style="display: block; width: 100%; height: auto; margin-top: 20px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px;">
+            <img src="portada1.png" alt="Cover Image 1" class="full-width-image" style="display: block; width: 100%; height: auto; margin-top: 20px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px;">
             <section id="video-section">
                 <!-- Original video embed code -->
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 20px;"> <!-- Added margin-bottom for spacing -->
@@ -60,6 +60,25 @@
                 </div>
                 <div id="results">
                     <p id="calculationResult">El resultado aparecerá aquí.</p>
+                </div>
+            </section>
+            <section id="image-calculation-section-2">
+                <h3>Cálculos con Imagen 2 (Nueva Lógica)</h3>
+                <img src="pregunta1.png" alt="Imagen para nueva lógica de cálculo" id="calculation-image-2">
+                <div id="input-controls-2">
+                    <label for="inputA-2">Valor del ángulo a:</label>
+                    <input type="number" id="inputA-2" name="inputA-2" placeholder="Ingrese el valor del ángulo a (grados)">
+
+                    <label for="inputB-2">Valor de b:</label>
+                    <input type="number" id="inputB-2" name="inputB-2" placeholder="Ingrese el valor de b">
+
+                    <label for="inputC-2">Valor del ángulo c:</label>
+                    <input type="number" id="inputC-2" name="inputC-2" placeholder="Ingrese el valor del ángulo c (grados)">
+
+                    <button id="calculateButton-2">Calcular</button>
+                </div>
+                <div id="results-2">
+                    <p id="calculationResult-2">El resultado aparecerá aquí.</p>
                 </div>
             </section>
         </div>
