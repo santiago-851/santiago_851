@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (calculateButton) {
         calculateButton.addEventListener('click', function() {
             console.log("Calculate button clicked!"); // DEBUGGING LINE
-            calculateButton.textContent = 'Procesando...'; // DEBUGGING LINE - Visual feedback
+            calculateButton.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
 
             performCalculation();
 
