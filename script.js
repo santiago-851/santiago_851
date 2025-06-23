@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             calculateButton.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
 
             performCalculation();
+        });
+    }
 
     if (calculateButton2) {
         calculateButton2.addEventListener('click', function() {
@@ -63,6 +65,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
         let a = Math.sqrt(Math.pow(x, 2) + Math.pow(h, 2) - (2 * x * h * Math.cos(angleRad)));
+
+        // a = round(a,2)
+        a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
+
+        // Display the result
+        calculationResult.textContent = 'La distancia a es: ' + a.toFixed(2);
+        calculationResult.style.color = 'green'; // Or your preferred color for success
+    }
+
+    function performCalculation2() {
+        // Get values from input fields
+        const A = parseFloat(inputA.value);
+        const B = parseFloat(inputB.value);
+        const C = parseFloat(inputC.value);
+
+        // Validate inputs
+        if (isNaN(A) || isNaN(B) || isNaN(C)) {
+            calculationResult2.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult2.style.color = 'red';
+            return;
+        }
+
+        // Implement the calculation logic from the Python code
+        // angulo = radians(B+90)  => (beta + 90) * PI / 180
+        const angleRad = (B + 90) * Math.PI / 180;
+
+        // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
+        let a = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) - (2 * A * B * Math.cos(angleRad)));
 
         // a = round(a,2)
         a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
