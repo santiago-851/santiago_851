@@ -89,16 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Implement the calculation logic from the Python code
         // angulo = radians(B+90)  => (beta + 90) * PI / 180
-        const angleRad = (B + 90) * Math.PI / 180;
+        const angleRad2 = (B + 90) * Math.PI / 180;
 
         // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
-        let a = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) - (2 * A * B * Math.cos(angleRad)));
+        let a2 = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) - (2 * A * B ));
 
         // a = round(a,2)
-        a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
+        a2 = Math.round(a2 * 100) / 100; // Rounds to 2 decimal places
 
         // Display the result
-        calculationResult2.textContent = 'La distancia a es: ' + a.toFixed(2);
+        calculationResult2.textContent = 'La distancia a es: ' + a2.toFixed(2);
         calculationResult2.style.color = 'green'; // Or your preferred color for success
     }
 
