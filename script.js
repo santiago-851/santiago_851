@@ -208,6 +208,44 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult5.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 6
+
+    const calculateButton6 = document.getElementById('calculateButton6');
+    const input_lado1 = document.getElementById('input_lado1');
+    const input_lado2 = document.getElementById('input_lado2');
+    const input_angulo_paralelogramo = document.getElementById('input_angulo_paralelogramo');
+    const calculationResult6 = document.getElementById('calculationResult6');
+    const calculationImage6 = document.getElementById('calculation-image');
+
+    if (calculateButton6) {
+        calculateButton6.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton6.textContent = 'Calcular'; 
+
+            performCalculation6();
+        });
+    }
+
+    function performCalculation6() {
+
+        const lado1 = parseFloat(input_lado1.value);
+        const lado2 = parseFloat(input_lado2.value);
+        const angle = parseFloat(input_angulo_paralelogramo.value);
+
+        if (isNaN(lado1) || isNaN(lado2) || isNaN(angle)) {
+            calculationResult6.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult6.style.color = 'red';
+            return;
+        }
+        const angle_rad = angle * Math.PI / 180;
+
+        const area = lado1 * lado2 * Math.sin(angle_rad);
+        
+
+        calculationResult6.textContent = `El área es: ${area.toFixed(2)}.`;
+        calculationResult6.style.color = 'green'; // Or your preferred color for success
+    }
+
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
     // function loadImageAndCalculation(imageSrc, calculationFunction) {
