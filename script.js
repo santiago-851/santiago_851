@@ -1,26 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get references to the DOM elements
+
+    // pregunta 1
+
     const calculateButton = document.getElementById('calculateButton');
-    // const inputValue1 = document.getElementById('inputValue1'); // Old input
-    // const inputValue2 = document.getElementById('inputValue2'); // Old input
     const inputH = document.getElementById('inputH');
     const inputBeta = document.getElementById('inputBeta');
     const inputX = document.getElementById('inputX');
     const calculationResult = document.getElementById('calculationResult');
     const calculationImage = document.getElementById('calculation-image');
-    
-    // pregunta 2
-
-    const calculateButton2 = document.getElementById('calculateButton2');
-    // const inputValue1 = document.getElementById('inputValue1'); // Old input
-    // const inputValue2 = document.getElementById('inputValue2'); // Old input
-    const inputA = document.getElementById('inputA');
-    const inputB = document.getElementById('inputB');
-    const inputC = document.getElementById('inputC');
-    const calculationResult2 = document.getElementById('calculationResult');
-    const calculationImage2 = document.getElementById('calculation-image');
-
-
+      
     // Event listener for the calculate button
     if (calculateButton) {
         calculateButton.addEventListener('click', function() {
@@ -31,19 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (calculateButton2) {
-        calculateButton2.addEventListener('click', function() {
-            console.log("Calculate button clicked!"); // DEBUGGING LINE
-            calculateButton2.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
-
-            performCalculation2();
-
-            // Optional: Revert button text after a short delay if performCalculation is quick
-            // setTimeout(function() {
-            //     calculateButton.textContent = 'Calcular';
-            // }, 1000); // Reverts after 1 second
-        });
-    }
 
     // Function to get input values, perform calculation, and display result
     function performCalculation() {
@@ -74,6 +50,24 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 2
+
+    const calculateButton2 = document.getElementById('calculateButton2');
+    const inputA = document.getElementById('inputA');
+    const inputB = document.getElementById('inputB');
+    const inputC = document.getElementById('inputC');
+    const calculationResult2 = document.getElementById('calculationResult2');
+    const calculationImage2 = document.getElementById('calculation-image');
+
+    if (calculateButton2) {
+        calculateButton2.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); // DEBUGGING LINE
+            calculateButton2.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
+
+            performCalculation2();
+        });
+    }
+
     function performCalculation2() {
         // Get values from input fields
         const A = parseFloat(inputA.value);
@@ -87,9 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Implement the calculation logic from the Python code
-        // angulo = radians(B+90)  => (beta + 90) * PI / 180
-        const angleRad2 = (B + 90) * Math.PI / 180;
+        const sumResult = A+B+C;
 
         // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
         let a2 = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) - (2 * A * B ));
@@ -98,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         a2 = Math.round(a2 * 100) / 100; // Rounds to 2 decimal places
 
         // Display the result
-        calculationResult2.textContent = 'La distancia a es: ' + a2.toFixed(2);
+        calculationResult2.textContent = 'La distancia a es: ' + sumResult.toFixed(2);
         calculationResult2.style.color = 'green'; // Or your preferred color for success
     }
 
