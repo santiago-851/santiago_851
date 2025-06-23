@@ -396,6 +396,40 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult10.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 11
+
+    const calculateButton11 = document.getElementById('calculateButton11');
+    const input_velocidad = document.getElementById('input_velocidad');
+    const calculationResult11 = document.getElementById('calculationResult11');
+    const calculationImage11 = document.getElementById('calculation-image');
+
+    if (calculateButton11) {
+        calculateButton11.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton11.textContent = 'Calcular'; 
+
+            performCalculation11();
+        });
+    }
+
+    function performCalculation11(){
+
+        const x = parseFloat(input_velocidad.value);
+
+        if (isNaN(x)) {
+            calculationResult11.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult11.style.color = 'red';
+            return;
+        }
+
+        angle= 135*Math.PI / 180;
+        const valor = Math.sqrt(((x/2)**2)+((x)**2)-(2*(x/2)*x*Math.cos(angle)));
+        
+
+        calculationResult11.textContent = `La medida es: ${valor.toFixed(2)}`;
+        calculationResult11.style.color = 'green'; // Or your preferred color for success
+    }
+
 
 
     // Example: How you might change the image and associate specific calculations later
