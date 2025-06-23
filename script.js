@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const altura = Math.round(Math.sqrt(Length**2-Base**2)*10)/10;
 
-        calculationResult3.textContent = `El ángulo de elevación de la escalera es de: ${angulo_en_grados}°. La altura que alcanza la escalera sobre el edificio es de ${altura} pies`;
-        calculationResult3.textContent = `La altura que alcanza la escalera sobre el edificio es de ${altura} pies`;
+        calculationResult3.textContent = `El ángulo de elevación de la escalera es de: ${angulo_en_grados}°`;
+        calculationResult3.textContent = `La altura que alcanza la escalera sobre el edificio es de ${altura}`;
         calculationResult3.style.color = 'green'; // Or your preferred color for success
     }
 
