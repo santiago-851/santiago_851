@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dist_plane_a = millas*Math.sin(angle2_rad)/Math.sin(angle3_rad);
         const dist_plane_b = millas*Math.sin(angle1_rad)/Math.sin(angle3_rad);
 
-        calculationResult4.textContent = `Distancia del avión al punto A: ${dist_plane_a.toFixed(2)}. Distancia del avión al punto B: ${dist_plane_b.toFixed(2)}.`;
+        calculationResult4.textContent = `Distancia del avión al punto A es: ${dist_plane_a.toFixed(2)}. Distancia del avión al punto B es: ${dist_plane_b.toFixed(2)}.`;
         calculationResult4.style.color = 'green'; // Or your preferred color for success
     }
 
