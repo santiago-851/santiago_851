@@ -322,6 +322,46 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult8.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 9
+
+    const calculateButton9 = document.getElementById('calculateButton9');
+    const inputhb = document.getElementById('inputhb');
+    const inputangled = document.getElementById('inputangled');
+    const inputanglee = document.getElementById('inputanglee');
+    const calculationResult9 = document.getElementById('calculationResult9');
+    const calculationImage9 = document.getElementById('calculation-image');
+
+    if (calculateButton9) {
+        calculateButton9.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton9.textContent = 'Calcular'; 
+
+            performCalculation9();
+        });
+    }
+
+    function performCalculation9(){
+
+        const altura = parseFloat(inputhb.value);
+        const angle_inferior = parseFloat(inputangled.value);
+        const angle_superior = parseFloat(inputanglee.value);
+
+        if (isNaN(altura) || isNaN(angle_inferior) || isNaN(angle_superior)) {
+            calculationResult9.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult9.style.color = 'red';
+            return;
+        }
+        const angle_inferior_rad = angle_inferior * Math.PI / 180;
+        const angle_superior_rad = angle_superior * Math.PI / 180;
+
+
+        const valor = (altura / (Math.tan(angle_inferior_rad)+Math.tan(angle_superior_rad)));
+        
+
+        calculationResult9.textContent = `La distancia es: ${valor.toFixed(1)}`;
+        calculationResult9.style.color = 'green'; // Or your preferred color for success
+    }
+
 
 
     // Example: How you might change the image and associate specific calculations later
