@@ -284,6 +284,45 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult7.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 8
+
+    const calculateButton8 = document.getElementById('calculateButton8');
+    const input_angulo_rh = document.getElementById('input_angulo_rh');
+    const input_elevacion = document.getElementById('input_elevacion');
+    const input_800pies = document.getElementById('input_800pies');
+    const calculationResult8 = document.getElementById('calculationResult8');
+    const calculationImage8 = document.getElementById('calculation-image');
+
+    if (calculateButton8) {
+        calculateButton8.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton8.textContent = 'Calcular'; 
+
+            performCalculation8();
+        });
+    }
+
+    function performCalculation8() {
+
+        const angle = parseFloat(input_angulo_rh.value);
+        const elevacion = parseFloat(input_elevacion.value);
+        const base = parseFloat(input_800pies.value);
+
+        if (isNaN(angle) || isNaN(elevacion) || isNaN(base)) {
+            calculationResult8.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult8.style.color = 'red';
+            return;
+        }
+        const angle_rad = angle * Math.PI / 180;
+
+        const longitud = Math.sqrt((base+(elevacion/Math.tan(angle_rad)))**2+(elevacion)**2);
+        
+
+        calculationResult8.textContent = `La longitud es: ${longitud.toFixed(2)}`;
+        calculationResult8.style.color = 'green'; // Or your preferred color for success
+    }
+
+
 
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
