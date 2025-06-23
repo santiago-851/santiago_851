@@ -362,6 +362,40 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult9.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 10
+
+    const calculateButton10 = document.getElementById('calculateButton10');
+    const inputlado_hexagono = document.getElementById('inputlado_hexagono');
+    const calculationResult10 = document.getElementById('calculationResult10');
+    const calculationImage10 = document.getElementById('calculation-image');
+
+    if (calculateButton10) {
+        calculateButton10.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton10.textContent = 'Calcular'; 
+
+            performCalculation10();
+        });
+    }
+
+    function performCalculation10(){
+
+        const x = parseFloat(inputlado_hexagono.value);
+
+        if (isNaN(x)) {
+            calculationResult10.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult10.style.color = 'red';
+            return;
+        }
+
+        angle= 120*Math.PI / 180;
+        const valor = (x/2)**2+(x)**2-2*(x/2)*x*Math.cos(angle);
+        
+
+        calculationResult10.textContent = `La medida es: ${valor.toFixed(2)}`;
+        calculationResult10.style.color = 'green'; // Or your preferred color for success
+    }
+
 
 
     // Example: How you might change the image and associate specific calculations later
