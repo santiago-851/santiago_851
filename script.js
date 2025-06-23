@@ -126,8 +126,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const altura = Math.round(Math.sqrt(Length**2-Base**2)*10)/10;
 
-        calculationResult3.textContent = `El ángulo de elevación de la escalera es de: ${angulo_en_grados}. La altura que alcanza la escalera sobre el edificio es de ${altura}.`;
+        calculationResult3.textContent = `El ángulo de elevación es: ${angulo_en_grados}. La altura que alcanza la escalera es: ${altura}.`;
         calculationResult3.style.color = 'green'; // Or your preferred color for success
+    }
+
+        // pregunta 4
+
+    const calculateButton4 = document.getElementById('calculateButton4');
+    const input_dist_millas = document.getElementById('input_dist_millas');
+    const input_angulo_1 = document.getElementById('input_angulo_1');
+    const input_angulo_2 = document.getElementById('input_angulo_2');
+    const calculationResult4 = document.getElementById('calculationResult4');
+    const calculationImage4 = document.getElementById('calculation-image');
+
+    if (calculateButton4) {
+        calculateButton4.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton4.textContent = 'Calcular'; 
+
+            performCalculation4();
+        });
+    }
+
+    function performCalculation4() {
+
+        const millas = parseFloat(input_dist_millas.value);
+        const angle1 = parseFloat(input_angulo_1.value);
+        const angle2 = parseFloat(input_angulo_2.value);
+
+        if (isNaN(millas) || isNaN(angle1) || isNaN(angle2)) {
+            calculationResult4.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult4.style.color = 'red';
+            return;
+        }
+
+        const dist_plane_a = Math.round(millas*Math.sin(angle2)/sin(180-angle1-angle2))/10;
+        const dist_plane_b = Math.round(millas*Math.sin(angle1)/sin(180-angle1-angle2))/10;
+
+        calculationResult4.textContent = `Distancia del avión al punto A: ${dist_plane_a}. Distancia del avión al punto B: ${dist_plane_b}.`;
+        calculationResult4.style.color = 'green'; // Or your preferred color for success
     }
 
     // Example: How you might change the image and associate specific calculations later
