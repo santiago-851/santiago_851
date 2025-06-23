@@ -81,16 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const sumResult = A+B+C;
+        const a_radian = A*Math.PI/180;
+        const c_radian = C*Math.PI/180;
 
-        // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
-        let a2 = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) - (2 * A * B ));
-
-        // a = round(a,2)
-        a2 = Math.round(a2 * 100) / 100; // Rounds to 2 decimal places
+        const x_1 = B/Math.tan(a_radian);
+        const x_2 = B/Math.tan(c_radian);
+        
+        const x_total = Math.round((x_1 + x_2)*100)/100;
 
         // Display the result
-        calculationResult2.textContent = 'La distancia a es: ' + sumResult.toFixed(2);
+        calculationResult2.textContent = 'La distancia a es: ' + x_total;
         calculationResult2.style.color = 'green'; // Or your preferred color for success
     }
 
