@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         angle= 120*Math.PI / 180;
-        const valor = (x/2)**2+(x)**2-2*(x/2)*x*Math.cos(angle);
+        const valor = ((x/2)**2)+((x)**2)-(2*(x/2)*x*Math.cos(angle));
         
 
         calculationResult10.textContent = `La medida es: ${valor.toFixed(2)}`;
