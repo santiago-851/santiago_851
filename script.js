@@ -69,12 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function performCalculation2() {
-        // Get values from input fields
+
         const A = parseFloat(inputA.value);
         const B = parseFloat(inputB.value);
         const C = parseFloat(inputC.value);
 
-        // Validate inputs
         if (isNaN(A) || isNaN(B) || isNaN(C)) {
             calculationResult2.textContent = 'Por favor, ingrese números válidos en todos los campos.';
             calculationResult2.style.color = 'red';
@@ -94,7 +93,42 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult2.style.color = 'green'; // Or your preferred color for success
     }
 
-    
+        // pregunta 3
+
+    const calculateButton3 = document.getElementById('calculateButton3');
+    const inputLongitud_es = document.getElementById('inputLongitud_es');
+    const inputBase_es = document.getElementById('inputBase_es');
+    const calculationResult3 = document.getElementById('calculationResult3');
+    const calculationImage3 = document.getElementById('calculation-image');
+
+    if (calculateButton3) {
+        calculateButton3.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton3.textContent = 'Calcular'; 
+
+            performCalculation3();
+        });
+    }
+
+    function performCalculation3() {
+
+        const Length = parseFloat(inputLongitud_es.value);
+        const Base = parseFloat(inputBase_es.value);
+
+        if (isNaN(Length) || isNaN(Base)) {
+            calculationResult3.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult3.style.color = 'red';
+            return;
+        }
+
+        const angulo_en_rad = Math.acos(Base / Length);
+        const angulo_en_grados = Math.round(angulo_en_rad * 180 / Math.PI*10)/10;
+
+        const altura = Math.round(Math.sqrt(Length**2-Base**2)*10)/10;
+
+        calculationResult3.textContent = `El ángulo de elevación de la escalera es <b>${angulo_en_grados}°</b><br>La altura que alcanza la escalera sobre el edificio es <b>${altura}</b>`;
+        calculationResult3.style.color = 'green'; // Or your preferred color for success
+    }
 
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
