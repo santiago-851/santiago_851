@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputX = document.getElementById('inputX');
     const calculationResult = document.getElementById('calculationResult');
     const calculationImage = document.getElementById('calculation-image');
+    
+    // pregunta 2
+
+    const calculateButton2 = document.getElementById('calculateButton2');
+    // const inputValue1 = document.getElementById('inputValue1'); // Old input
+    // const inputValue2 = document.getElementById('inputValue2'); // Old input
+    const inputA = document.getElementById('inputA');
+    const inputB = document.getElementById('inputB');
+    const inputC = document.getElementById('inputC');
+    const calculationResult2 = document.getElementById('calculationResult');
+    const calculationImage2 = document.getElementById('calculation-image');
+
 
     // Event listener for the calculate button
     if (calculateButton) {
@@ -16,6 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
             calculateButton.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
 
             performCalculation();
+
+    if (calculateButton2) {
+        calculateButton2.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); // DEBUGGING LINE
+            calculateButton2.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
+
+            performCalculation2();
 
             // Optional: Revert button text after a short delay if performCalculation is quick
             // setTimeout(function() {
