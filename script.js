@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const altura_helicoptero = (metros*Math.tan(angle_2rad)*Math.tan(angle_1rad))/(Math.tan(angle_2rad)+Math.tan(angle_1rad))
         
 
-        calculationResult5.textContent = `La altura del helicóptero es: ${altura_helicoptero.toFixed(2)}.`;
+        calculationResult5.textContent = `La altura del helicóptero es: ${altura_helicoptero.toFixed(2)}`;
         calculationResult5.style.color = 'green'; // Or your preferred color for success
     }
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const area = lado1 * lado2 * Math.sin(angle_rad);
         
 
-        calculationResult6.textContent = `El área es: ${area.toFixed(2)}.`;
+        calculationResult6.textContent = `El área es: ${area.toFixed(2)}`;
         calculationResult6.style.color = 'green'; // Or your preferred color for success
     }
 
