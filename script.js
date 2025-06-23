@@ -246,6 +246,45 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult6.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 7
+
+    const calculateButton7 = document.getElementById('calculateButton7');
+    const input_lado_1 = document.getElementById('input_lado_1');
+    const input_lado_2 = document.getElementById('input_lado_2');
+    const input_angulo_paralelo_gramo = document.getElementById('input_angulo_paralelo_gramo');
+    const calculationResult7 = document.getElementById('calculationResult7');
+    const calculationImage7 = document.getElementById('calculation-image');
+
+    if (calculateButton7) {
+        calculateButton7.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton7.textContent = 'Calcular'; 
+
+            performCalculation7();
+        });
+    }
+
+    function performCalculation7() {
+
+        const lado1 = parseFloat(input_lado_1.value);
+        const lado2 = parseFloat(input_lado_2.value);
+        const angle = parseFloat(input_angulo_paralelo_gramo.value);
+
+        if (isNaN(lado1) || isNaN(lado2) || isNaN(angle)) {
+            calculationResult7.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult7.style.color = 'red';
+            return;
+        }
+        const angle_rad = angle * Math.PI / 180;
+
+        const longitud = Math.sqrt((lado1 ** 2) + (lado2 ** 2) + (2 * lado1 * lado2 * Math.cos(angle_rad)));
+        
+
+        calculationResult7.textContent = `La longitud es: ${longitud.toFixed(2)}`;
+        calculationResult7.style.color = 'green'; // Or your preferred color for success
+    }
+
+
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
     // function loadImageAndCalculation(imageSrc, calculationFunction) {
