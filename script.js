@@ -1,74 +1,101 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get references to the DOM elements
-    const calculateButton = document.getElementById('calculateButton');
-    // const inputValue1 = document.getElementById('inputValue1'); // Old input
-    // const inputValue2 = document.getElementById('inputValue2'); // Old input
-    const inputH = document.getElementById('inputH');
-    const inputBeta = document.getElementById('inputBeta');
-    const inputX = document.getElementById('inputX');
-    const calculationResult = document.getElementById('calculationResult');
-    const calculationImage = document.getElementById('calculation-image');
 
-    // Event listener for the calculate button
-    if (calculateButton) {
-        calculateButton.addEventListener('click', function() {
-            console.log("Calculate button clicked!"); // DEBUGGING LINE
-            calculateButton.textContent = 'Calcular'; // DEBUGGING LINE - Visual feedback
+    // --- Lógica para la Pregunta 1 ---
+    const q1_calculateButton = document.getElementById('q1_calculateButton');
+    const q1_inputH = document.getElementById('q1_inputH');
+    const q1_inputBeta = document.getElementById('q1_inputBeta');
+    const q1_inputX = document.getElementById('q1_inputX');
+    const q1_calculationResult = document.getElementById('q1_calculationResult');
 
-            performCalculation();
-
-            // Optional: Revert button text after a short delay if performCalculation is quick
-            // setTimeout(function() {
-            //     calculateButton.textContent = 'Calcular';
-            // }, 1000); // Reverts after 1 second
+    if (q1_calculateButton) {
+        q1_calculateButton.addEventListener('click', function() {
+            performCalculationQ1();
         });
     }
 
-    // Function to get input values, perform calculation, and display result
-    function performCalculation() {
-        // Get values from input fields
-        const h = parseFloat(inputH.value);
-        const beta = parseFloat(inputBeta.value);
-        const x = parseFloat(inputX.value);
+    function performCalculationQ1() {
+        const h = parseFloat(q1_inputH.value);
+        const beta = parseFloat(q1_inputBeta.value);
+        const x = parseFloat(q1_inputX.value);
 
-        // Validate inputs
         if (isNaN(h) || isNaN(beta) || isNaN(x)) {
-            calculationResult.textContent = 'Por favor, ingrese números válidos en todos los campos.';
-            calculationResult.style.color = 'red';
+            q1_calculationResult.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            q1_calculationResult.style.color = 'red';
             return;
         }
 
-        // Implement the calculation logic from the Python code
-        // angulo = radians(B+90)  => (beta + 90) * PI / 180
         const angleRad = (beta + 90) * Math.PI / 180;
-
-        // a = sqrt((x**2)+(h**2)-2*x*h*cos(angulo))
         let a = Math.sqrt(Math.pow(x, 2) + Math.pow(h, 2) - (2 * x * h * Math.cos(angleRad)));
+        a = Math.round(a * 100) / 100;
 
-        // a = round(a,2)
-        a = Math.round(a * 100) / 100; // Rounds to 2 decimal places
-
-        // Display the result
-        calculationResult.textContent = 'La distancia a es: ' + a.toFixed(2);
-        calculationResult.style.color = 'green'; // Or your preferred color for success
+        q1_calculationResult.textContent = 'La distancia a es: ' + a.toFixed(2);
+        q1_calculationResult.style.color = 'green';
     }
 
-    
+    // --- Lógica para la Pregunta 2 (Suma: a + b + c) ---
+    const q2_calculateButton = document.getElementById('q2_calculateButton');
+    const q2_inputA = document.getElementById('q2_inputA');
+    const q2_inputB = document.getElementById('q2_inputB');
+    const q2_inputC = document.getElementById('q2_inputC');
+    const q2_calculationResult = document.getElementById('q2_calculationResult');
 
-    // Example: How you might change the image and associate specific calculations later
-    // For now, this is just a conceptual note.
-    // function loadImageAndCalculation(imageSrc, calculationFunction) {
-    //     calculationImage.src = imageSrc;
-    //     // `currentCalculation` would be a variable holding the function to execute
-    //     // currentCalculation = calculationFunction;
-    //     inputValue1.value = '';
-    //     inputValue2.value = '';
-    //     calculationResult.textContent = 'El resultado aparecerá aquí.';
-    //     calculationResult.style.color = 'black';
-    // }
+    if (q2_calculateButton) {
+        q2_calculateButton.addEventListener('click', function() {
+            performCalculationQ2();
+        });
+    }
 
-    // Example of a specific calculation function (to be defined by user later)
-    // function calculateAreaOfRectangle(length, width) {
-    //     return length * width;
-    // }
+    function performCalculationQ2() {
+        const a = parseFloat(q2_inputA.value);
+        const b = parseFloat(q2_inputB.value);
+        const c = parseFloat(q2_inputC.value);
+
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            q2_calculationResult.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            q2_calculationResult.style.color = 'red';
+            return;
+        }
+
+        const sumResult = a + b + c;
+
+        q2_calculationResult.textContent = 'La suma es: ' + sumResult.toFixed(2);
+        q2_calculationResult.style.color = 'green';
+    }
+
+    // --- Lógica para la Pregunta 3 (Aquí deberás implementar la lógica específica para esta pregunta) ---
+    const q3_calculateButton = document.getElementById('q3_calculateButton');
+    const q3_inputLength = document.getElementById('q3_inputLength');
+    const q3_inputBase = document.getElementById('q3_inputBase');
+    const q3_calculationResult = document.getElementById('q3_calculationResult');
+
+    if (q3_calculateButton) {
+        q3_calculateButton.addEventListener('click', function() {
+            performCalculationQ3();
+        });
+    }
+
+    function performCalculationQ3() {
+        const length = parseFloat(q3_inputLength.value);
+        const base = parseFloat(q3_inputBase.value);
+
+        if (isNaN(length) || isNaN(base)) {
+            q3_calculationResult.textContent = 'Por favor, ingrese números válidos en ambos campos.';
+            q3_calculationResult.style.color = 'red';
+            return;
+        }
+
+        // --- Aquí debes añadir la lógica de cálculo para la Pregunta 3 ---
+        // Por ejemplo, para hallar la altura de la escalera usando Pitágoras: sqrt(length^2 - base^2)
+        if (base >= length) { // Validar que la base no sea mayor o igual a la longitud de la escalera
+            q3_calculationResult.textContent = 'La base no puede ser mayor o igual que la longitud de la escalera.';
+            q3_calculationResult.style.color = 'red';
+            return;
+        }
+        const height = Math.sqrt(Math.pow(length, 2) - Math.pow(base, 2));
+        // Si necesitas redondear, puedes usar Math.round(height * 100) / 100;
+        
+        q3_calculationResult.textContent = 'La altura de la escalera es: ' + height.toFixed(2);
+        q3_calculationResult.style.color = 'green';
+    }
+
 });
