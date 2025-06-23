@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const altura_helicoptero = (metros*Math.tan(angle_2rad)*Math.tan(angle_1rad))/(Math.tan(angle_2rad)+Math.tan(angle_1rad))
         
 
-        calculationResult4.textContent = `La altura del helicóptero es: ${altura_helicoptero.toFixed(2)}.`;
-        calculationResult4.style.color = 'green'; // Or your preferred color for success
+        calculationResult5.textContent = `La altura del helicóptero es: ${altura_helicoptero.toFixed(2)}.`;
+        calculationResult5.style.color = 'green'; // Or your preferred color for success
     }
 
     // Example: How you might change the image and associate specific calculations later
