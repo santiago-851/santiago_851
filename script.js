@@ -169,6 +169,45 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult4.style.color = 'green'; // Or your preferred color for success
     }
 
+        // pregunta 5
+
+    const calculateButton5 = document.getElementById('calculateButton5');
+    const inputmeter = document.getElementById('inputmeter');
+    const input_ang_1 = document.getElementById('input_ang_1');
+    const input_ang_2 = document.getElementById('input_ang_2');
+    const calculationResult5 = document.getElementById('calculationResult5');
+    const calculationImage5 = document.getElementById('calculation-image');
+
+    if (calculateButton5) {
+        calculateButton5.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton5.textContent = 'Calcular'; 
+
+            performCalculation5();
+        });
+    }
+
+    function performCalculation5() {
+
+        const metros = parseFloat(inputmeter.value);
+        const angle_1 = parseFloat(input_ang_1.value);
+        const angle_2 = parseFloat(input_ang_2.value);
+
+        if (isNaN(metros) || isNaN(angle_1) || isNaN(angle_2)) {
+            calculationResult5.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult5.style.color = 'red';
+            return;
+        }
+        const angle1_rad = angle1 * Math.PI / 180;
+        const angle2_rad = angle2 * Math.PI / 180;
+        const angle3_rad = (180 - angle1 - angle2) * Math.PI / 180;
+        const dist_plane_a = millas*Math.sin(angle2_rad)/Math.sin(angle3_rad);
+        const dist_plane_b = millas*Math.sin(angle1_rad)/Math.sin(angle3_rad);
+
+        calculationResult4.textContent = `Distancia del avión al punto A es: ${dist_plane_a.toFixed(2)}. Distancia del avión al punto B es: ${dist_plane_b.toFixed(2)}.`;
+        calculationResult4.style.color = 'green'; // Or your preferred color for success
+    }
+
     // Example: How you might change the image and associate specific calculations later
     // For now, this is just a conceptual note.
     // function loadImageAndCalculation(imageSrc, calculationFunction) {
