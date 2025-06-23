@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const valor = Math.sqrt(((x/2)**2)+((x)**2)-(2*(x/2)*x*Math.cos(angle)));
         
 
-        calculationResult11.textContent = `La medida es: ${valor.toFixed(2)}`;
+        calculationResult11.textContent = `La medida es: ${valor.toFixed(1)}`;
         calculationResult11.style.color = 'green'; // Or your preferred color for success
     }
 
