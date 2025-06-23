@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const x_total = Math.round((x_1 + x_2)*100)/100;
 
         // Display the result
-        calculationResult2.textContent = 'La distancia a es: ' + x_total;
+        calculationResult2.textContent = 'El valor de x es: ' + x_total;
         calculationResult2.style.color = 'green'; // Or your preferred color for success
     }
 
