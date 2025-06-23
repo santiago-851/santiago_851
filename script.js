@@ -159,11 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
             calculationResult4.style.color = 'red';
             return;
         }
+        const angle1_rad = angle1 * Math.PI / 180;
+        const angle2_rad = angle2 * Math.PI / 180;
+        const angle3_rad = (180 - angle1 - angle2) * Math.PI / 180;
+        const dist_plane_a = millas*Math.sin(angle2_rad)/Math.sin(angle3_rad);
+        const dist_plane_b = millas*Math.sin(angle1_rad)/Math.sin(angle3_rad);
 
-        const dist_plane_a = Math.round(millas*Math.sin(angle2)/sin(180-angle1-angle2))/10;
-        const dist_plane_b = Math.round(millas*Math.sin(angle1)/sin(180-angle1-angle2))/10;
-
-        calculationResult4.textContent = `Distancia del avión al punto A: ${dist_plane_a}. Distancia del avión al punto B: ${dist_plane_b}.`;
+        calculationResult4.textContent = `Distancia del avión al punto A: ${dist_plane_a.toFixed(2)}. Distancia del avión al punto B: ${dist_plane_b.toFixed(2)}.`;
         calculationResult4.style.color = 'green'; // Or your preferred color for success
     }
 
