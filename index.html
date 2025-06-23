@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz 27. Matemáticas Básicas</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <!-- We might need to add some specific styles for our content within the new structure later -->
+</head>
 <body>
 
     <div class="header">
+        <!-- Content from old <header> goes here -->
         <h1>Quiz 27. Matemáticas Básicas</h1>
         <h2>Elaborado por Santiago Roberto Saiz</h2>
         <div class="youtube-channel-link">
@@ -20,12 +22,17 @@
 
     <div class="row">
         <div class="column side" style="background-color:#f1f1f1;">
-            <p>&nbsp;</p> </div>
+            <!-- Left side column - empty for now -->
+            <p>&nbsp;</p> <!-- Adding non-breaking space to give it some content for display -->
+        </div>
 
         <div class="column middle">
-            <img src="canal.png" alt="Hallar valor de x" id="calculation-image-general">
+            <!-- Main content sections go here -->
+             <img src="canal.png" alt="Hallar valor de x" id="calculation-image">
             <section id="video-section">
-                <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 20px;"> <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                <!-- Original video embed code -->
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 20px;"> <!-- Added margin-bottom for spacing -->
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                             src="https://www.youtube.com/embed/lnPylS6z-vU"
                             title="YouTube video player"
                             frameborder="0"
@@ -35,71 +42,73 @@
                 </div>
             </section>
 
-            <section id="image-calculation-section-1">
-                <h3>Cálculos con Imagen - Pregunta 1</h3>
-                <img src="pregunta1.png" alt="Hallar longitud del cable" id="calculation-image-q1">
-                <div id="input-controls-q1">
-                    <label for="q1_inputH">¿Cuál es la altura de la torre? h:</label>
-                    <input type="number" id="q1_inputH" name="inputH" placeholder="Ingrese la altura h">
+            <section id="image-calculation-section">
+                <h3>Cálculos con Imagen</h3>
+                <img src="pregunta1.png" alt="Hallar longitud del cable" id="calculation-image">
+                <div id="input-controls">
+                    <label for="inputH">¿Cuál es la altura de la torre? h:</label>
+                    <input type="number" id="inputH" name="inputH" placeholder="Ingrese la altura h">
 
-                    <label for="q1_inputBeta">¿Qué inclinación tiene? β:</label>
-                    <input type="number" id="q1_inputBeta" name="inputBeta" placeholder="Ingrese la inclinación β (grados)">
+                    <label for="inputBeta">¿Qué inclinación tiene? β:</label>
+                    <input type="number" id="inputBeta" name="inputBeta" placeholder="Ingrese la inclinación β (grados)">
 
-                    <label for="q1_inputX">Valor de x:</label>
-                    <input type="number" id="q1_inputX" name="inputX" placeholder="Ingrese el valor de x">
+                    <label for="inputX">Valor de x:</label>
+                    <input type="number" id="inputX" name="inputX" placeholder="Ingrese el valor de x">
 
-                    <button id="q1_calculateButton">Calcular</button>
+                    <button id="calculateButton">Calcular</button>
                 </div>
-                <div id="results-q1">
-                    <p id="q1_calculationResult">El resultado aparecerá aquí.</p>
+                <div id="results">
+                    <p id="calculationResult">El resultado aparecerá aquí.</p>
                 </div>
             </section>
-            <img src="portada1.png" alt="Separador" class="separator-image">
+            <img src="portada1.png" alt="Hallar valor de x" id="calculation-image">
             
-            <section id="image-calculation-section-2">
-                <h3>Cálculos con Imagen - Pregunta 2</h3>
-                <img src="pregunta2.png" alt="Hallar valor de x" id="calculation-image-q2">
-                <div id="input-controls-q2">
-                    <label for="q2_inputA">¿Cuál es el valor de a?:</label>
-                    <input type="number" id="q2_inputA" name="inputA" placeholder="Ingrese el valor de a (Por ejemplo, 60)">
+            <section id="image-calculation-section">
+                <h3>Cálculos con Imagen</h3>
+                <img src="pregunta2.png" alt="Hallar valor de x" id="calculation-image">
+                <div id="input-controls">
+                    <label for="inputH">¿Cuál es el valor de a?:</label>
+                    <input type="number" id="inputH" name="inputH" placeholder="Ingrese el valor de a (Por ejemplo, 60)">
 
-                    <label for="q2_inputB">¿Cuál es el valor de b?:</label>
-                    <input type="number" id="q2_inputB" name="inputB" placeholder="Ingrese el valor de b (Por ejemplo, 100)">
+                    <label for="inputBeta">¿Cuál es el valor de b?:</label>
+                    <input type="number" id="inputBeta" name="inputBeta" placeholder="Ingrese el valor de b (Por ejemplo, 100)">
 
-                    <label for="q2_inputC">¿Cuál es el valor de c?:</label>
-                    <input type="number" id="q2_inputC" name="inputC" placeholder="Ingrese el valor de c (Por ejemplo, 30)">
+                    <label for="inputX">¿Cuál es el valor de c?:</label>
+                    <input type="number" id="inputX" name="inputX" placeholder="Ingrese el valor de c (Por ejemplo, 30)">
 
-                    <button id="q2_calculateButton">Calcular</button>
+                    <button id="calculateButton">Calcular</button>
                 </div>
-                <div id="results-q2">
-                    <p id="q2_calculationResult">El resultado aparecerá aquí.</p>
+                <div id="results">
+                    <p id="calculationResult">El resultado aparecerá aquí.</p>
                 </div>
 
             </section>
-            <img src="portada1.png" alt="Separador" class="separator-image">
+            <img src="portada1.png" alt="Hallar valor de x" id="calculation-image">
 
-            <section id="image-calculation-section-3">
-                <h3>Cálculos con Imagen - Pregunta 3</h3>
-                <img src="pregunta3.png" alt="Escalera se apoya sobre edificio" id="calculation-image-q3">
-                <div id="input-controls-q3">
-                    <label for="q3_inputLength">¿Cuál es la longitud de la escalera?:</label>
-                    <input type="number" id="q3_inputLength" name="inputLength" placeholder="Ingrese la longitud de la escalera (Por ejemplo, 14)">
+            <section id="image-calculation-section">
+                <h3>Cálculos con Imagen</h3>
+                <img src="pregunta3.png" alt="Escalera se apoya sobre edificio" id="calculation-image">
+                <div id="input-controls">
+                    <label for="inputH">¿Cuál es la longitud de la escalera?:</label>
+                    <input type="number" id="inputH" name="inputH" placeholder="Ingrese la longitud de la escalera (Por ejemplo, 14)">
 
-                    <label for="q3_inputBase">¿Cuál es la base de la escalera?:</label>
-                    <input type="number" id="q3_inputBase" name="inputBase" placeholder="Ingrese la base de la escalera (Por ejemplo, 2)">
+                    <label for="inputBeta">¿Cuál es la base de la escalera?:</label>
+                    <input type="number" id="inputBeta" name="inputBeta" placeholder="Ingrese la base de la escalera (Por ejemplo, 2)">
 
-                    <button id="q3_calculateButton">Calcular</button>
+                    <button id="calculateButton">Calcular</button>
                 </div>
-                <div id="results-q3">
-                    <p id="q3_calculationResult">El resultado aparecerá aquí.</p>
+                <div id="results">
+                    <p id="calculationResult">El resultado aparecerá aquí.</p>
                 </div>
             </section>
-            <img src="portada1.png" alt="Separador" class="separator-image">
+            <img src="portada1.png" alt="Hallar valor de x" id="calculation-image">
 
         </div>
 
         <div class="column side" style="background-color:#f1f1f1;">
-            <p>&nbsp;</p> </div>
+            <!-- Right side column - empty for now -->
+            <p>&nbsp;</p> <!-- Adding non-breaking space for display -->
+        </div>
     </div>
 
     <div class="footer">
