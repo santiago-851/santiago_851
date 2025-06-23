@@ -198,13 +198,13 @@ document.addEventListener('DOMContentLoaded', function() {
             calculationResult5.style.color = 'red';
             return;
         }
-        const angle1_rad = angle1 * Math.PI / 180;
-        const angle2_rad = angle2 * Math.PI / 180;
-        const angle3_rad = (180 - angle1 - angle2) * Math.PI / 180;
-        const dist_plane_a = millas*Math.sin(angle2_rad)/Math.sin(angle3_rad);
-        const dist_plane_b = millas*Math.sin(angle1_rad)/Math.sin(angle3_rad);
+        const angle_1rad = angle_1 * Math.PI / 180;
+        const angle_2rad = angle_2 * Math.PI / 180;
 
-        calculationResult4.textContent = `Distancia del avión al punto A es: ${dist_plane_a.toFixed(2)}. Distancia del avión al punto B es: ${dist_plane_b.toFixed(2)}.`;
+        const altura_helicoptero = (metros*Math.tan(angle_2rad)*Math.tan(angle_1rad))/(Math.tan(angle_2rad)+Math.tan(angle_1rad))
+        
+
+        calculationResult4.textContent = `La altura del helicóptero es: ${altura_helicoptero.toFixed(2)}.`;
         calculationResult4.style.color = 'green'; // Or your preferred color for success
     }
 
