@@ -430,6 +430,82 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult11.style.color = 'green'; // Or your preferred color for success
     }
 
+    // pregunta 17
+
+    const calculateButton12 = document.getElementById('calculateButton12');
+    const input_h_avion = document.getElementById('input_h_avion');
+    const input_angulo_avion = document.getElementById('input_angulo_avion');
+    const calculationResult12 = document.getElementById('calculationResult12');
+    const calculationImage12 = document.getElementById('calculation-image');
+
+    if (calculateButton12) {
+        calculateButton12.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton12.textContent = 'Calcular'; 
+
+            performCalculation12();
+        });
+    }
+
+    function performCalculation12(){
+
+        const altura = parseFloat(input_h_avion.value);
+        const angle = parseFloat(input_angulo_avion.value);
+
+        if (isNaN(angle) || isNaN(altura)) {
+            calculationResult12.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult12.style.color = 'red';
+            return;
+        }
+
+        angle_rad = angle*Math.PI / 180;
+        const valor = altura / Math.sin(angle_rad);
+
+        calculationResult12.textContent = `La distancia es: ${valor.toFixed(2)}`;
+        calculationResult12.style.color = 'green'; // Or your preferred color for success
+    }
+
+    // pregunta 18
+
+    const calculateButton13 = document.getElementById('calculateButton13');
+    const input_long1 = document.getElementById('input_long1');
+    const input_long2 = document.getElementById('input_long2');
+    const input_angle_s = document.getElementById('input_angle_s');
+    const calculationResult13 = document.getElementById('calculationResult13');
+    const calculationImage13 = document.getElementById('calculation-image');
+
+    if (calculateButton13) {
+        calculateButton13.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton13.textContent = 'Calcular'; 
+
+            performCalculation13();
+        });
+    }
+
+    function performCalculation13(){
+
+        const long1 = parseFloat(input_long1.value);
+        const long2 = parseFloat(input_long2.value);
+        const angle = parseFloat(input_angle_s.value);
+
+        if (isNaN(long1) || isNaN(long2) || isNaN(angle)) {
+            calculationResult13.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult13.style.color = 'red';
+            return;
+        }
+
+        angle_rad = angle*Math.PI / 180;
+        const h = long1*Math.sin(angle_rad); 
+        const cable1 = long1*Math.cos(angle_rad);
+        const cable2 = Math.sqrt((long2**2) - (h**2));
+        const valor = cable1 + cable2;
+
+        calculationResult13.textContent = `La distancia es: ${valor.toFixed(1)}`;
+        calculationResult13.style.color = 'green'; // Or your preferred color for success
+    }
+
+
 
 
     // Example: How you might change the image and associate specific calculations later
