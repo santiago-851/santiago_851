@@ -577,6 +577,45 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult15.style.color = 'green'; // Or your preferred color for success
     }
 
+    // pregunta 23
+
+    const calculateButton16 = document.getElementById('calculateButton16');
+    const inputvalorac = document.getElementById('inputvalorac');
+    const inputvalorcb = document.getElementById('inputvalorcb');
+    const inputvalorang = document.getElementById('inputvalorang');
+    const calculationResult16 = document.getElementById('calculationResult16');
+
+    if (calculateButton16) {
+        calculateButton16.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton16.textContent = 'Calcular'; 
+
+            performCalculation16();
+        });
+    }
+
+    function performCalculation16(){
+
+        const ca = parseFloat(inputvalorac.value);
+        const cb = parseFloat(inputvalorcb.value);
+        const angulo = parseFloat(inputvalorang.value);
+
+        if (isNaN(ca) || isNaN(cb) || isNaN(angulo)) {
+            calculationResult16.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult16.style.color = 'red';
+            return;
+        }
+
+        angle_rad = (angulo*Math.PI / 180);
+        const angulo_b = ((Math.asin(ca/x))*(180/Math.PI));
+        const angulo_c = (180 - angulo - angulo_b);
+        const angulo_c_rad = angulo_c * Math.PI / 180;
+        const longitud = ((cb/Math.sin(angle_rad))*Math.sin(angulo_c_rad));
+
+        calculationResult16.textContent = `La distancia entre A y B es ${longitud.toFixed(1)}`;
+        calculationResult16.style.color = 'green'; // Or your preferred color for success
+    }
+
 
 
 
