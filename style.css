@@ -79,6 +79,11 @@ body {
    /* background-color: #f1f1f1; /* Match header/footer - user can remove if they want body bg */
 }
 
+.small-img {
+    width: 180px; /* O el valor que desees */
+    height: auto;
+}
+
 .column.middle {
   -webkit-flex: 2;
   -ms-flex: 2;
