@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         angle_rad = (angulo*Math.PI / 180);
-        const angulo_b = ((Math.asin(ca/x))*(180/Math.PI));
+        const angulo_b = ((Math.asin(ca/(cb/Math.sin(angle_rad)))*(180/Math.PI)));
         const angulo_c = (180 - angulo - angulo_b);
         const angulo_c_rad = angulo_c * Math.PI / 180;
         const longitud = ((cb/Math.sin(angle_rad))*Math.sin(angulo_c_rad));
