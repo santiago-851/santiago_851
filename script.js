@@ -505,6 +505,78 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult13.style.color = 'green'; // Or your preferred color for success
     }
 
+    // pregunta 21
+
+    const calculateButton14 = document.getElementById('calculateButton14');
+    const input_valora = document.getElementById('input_valora');
+    const input_valorb = document.getElementById('input_valorb');
+    const calculationResult14 = document.getElementById('calculationResult14');
+
+    if (calculateButton14) {
+        calculateButton14.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton14.textContent = 'Calcular'; 
+
+            performCalculation14();
+        });
+    }
+
+    function performCalculation14(){
+
+        const a = parseFloat(input_valora.value);
+        const beta = parseFloat(input_valorb.value);
+
+        if (isNaN(a) || isNaN(beta)) {
+            calculationResult14.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult14.style.color = 'red';
+            return;
+        }
+
+        angle_rad = beta*Math.PI / 180;
+        const b = a*Math.tan(angle_rad);
+        const r = a/Math.cos(angle_rad);
+        const alpha = 90-beta;
+
+        calculationResult14.textContent = `b= ${b.toFixed(2)}, r= ${r.toFixed(2)}, alpha α= ${alpha}`;
+        calculationResult14.style.color = 'green'; // Or your preferred color for success
+    }
+
+    // pregunta 22
+
+    const calculateButton15 = document.getElementById('calculateButton15');
+    const input_15 = document.getElementById('input_15');
+    const input_18 = document.getElementById('input_18');
+    const input_108 = document.getElementById('input_108');
+    const calculationResult15 = document.getElementById('calculationResult15');
+
+    if (calculateButton15) {
+        calculateButton15.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton15.textContent = 'Calcular'; 
+
+            performCalculation15();
+        });
+    }
+
+    function performCalculation15(){
+
+        const a = parseFloat(input_15.value);
+        const b_1 = parseFloat(input_18.value);
+        const c = parseFloat(input_108.value);
+
+        if (isNaN(a) || isNaN(b_1) || isNaN(c)) {
+            calculationResult15.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult15.style.color = 'red';
+            return;
+        }
+
+        angle_rad = c*Math.PI / 180;
+        const x = Math.sqrt(a**2 + b_1**2 - 2*a*b_1*Math.cos(angle_rad));
+
+        calculationResult15.textContent = `x= ${x.toFixed(2)} o x= ${x.toFixed(1)}`;
+        calculationResult15.style.color = 'green'; // Or your preferred color for success
+    }
+
 
 
 
