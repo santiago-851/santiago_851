@@ -616,6 +616,89 @@ document.addEventListener('DOMContentLoaded', function() {
         calculationResult16.style.color = 'green'; // Or your preferred color for success
     }
 
+    // pregunta 24
+
+    const calculateButton17 = document.getElementById('calculateButton17');
+    const inputlongitudcable1 = document.getElementById('inputlongitudcable1');
+    const inputlongitudcable2 = document.getElementById('inputlongitudcable2');
+    const inputbarcoremolcador = document.getElementById('inputbarcoremolcador');
+    const calculationResult17 = document.getElementById('calculationResult17');
+
+    if (calculateButton17) {
+        calculateButton17.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton17.textContent = 'Calcular'; 
+
+            performCalculation17();
+        });
+    }
+
+    function performCalculation17(){
+
+        const b = parseFloat(inputlongitudcable1.value);
+        const c = parseFloat(inputlongitudcable2.value);
+        const a = parseFloat(inputbarcoremolcador.value);
+
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            calculationResult17.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult17.style.color = 'red';
+            return;
+        }
+
+        const angulo = Math.acos((b**2+c**2-a**2)/(2*b*c));
+        const angulo_rad = angulo * 180 / Math.PI;
+
+        calculationResult17.textContent = `El ángulo es ${angulo_rad.toFixed(2)}°`;
+        calculationResult17.style.color = 'green'; // Or your preferred color for success
+    }
+
+    // pregunta 25
+
+    const calculateButton18 = document.getElementById('calculateButton18');
+    const input_inclinacion_colina = document.getElementById('input_inclinacion_colina');
+    const input_elevacion_globo_caliente = document.getElementById('input_elevacion_globo_caliente');
+    const input_elevacion_globo = document.getElementById('input_elevacion_globo');
+    const input_distancia_millas_colina = document.getElementById('input_distancia_millas_colina');
+    const calculationResult18 = document.getElementById('calculationResult18');
+
+    if (calculateButton18) {
+        calculateButton18.addEventListener('click', function() {
+            console.log("Calculate button clicked!"); 
+            calculateButton18.textContent = 'Calcular'; 
+
+            performCalculation18();
+        });
+    }
+
+    function performCalculation18(){
+
+        const inclinacion = parseFloat(input_inclinacion_colina.value);
+        const globo_caliente = parseFloat(input_elevacion_globo_caliente.value);
+        const globo = parseFloat(input_elevacion_globo.value);
+        const distancia_millas = parseFloat(input_distancia_millas_colina.value);
+
+        if (isNaN(inclinacion) || isNaN(globo_caliente) || isNaN(globo) || isNaN(distancia_millas)) {
+            calculationResult18.textContent = 'Por favor, ingrese números válidos en todos los campos.';
+            calculationResult18.style.color = 'red';
+            return;
+        }
+
+        const xp = -distancia_millas*Math.cos(inclinacion*Math.PI/180);
+        const yp = -distancia_millas*Math.sin(inclinacion*Math.PI/180);
+
+        //xb*(tan(globo)-tan(globocaliente))= yp-tan(globocaliente)*xp Con esto podemos hallar xb
+
+        const xb= (yp - Math.tan(globo_caliente * Math.PI / 180) * xp) / (Math.tan(globo * Math.PI / 180) - Math.tan(globo_caliente * Math.PI / 180));
+        const yb= xb*(Math.tan(globo * Math.PI / 180));
+
+        //por lo tanto la distancia es la hipotenusa de xb y yb
+        const distancia = Math.sqrt(xb**2 + yb**2);
+
+        calculationResult18.textContent = `La distancia es ${distancia.toFixed(2)} unidades.`;
+        calculationResult18.style.color = 'green'; // Or your preferred color for success
+    }
+
+
 
 
 
